@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "214b2a3a-43bb-4216-ad27-2743e29a81e3",
+		"name": "CSC625_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/all-users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"all-users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
