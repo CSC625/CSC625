@@ -137,4 +137,41 @@ public class UserService extends BaseService {
         });*/
     }
 
+    public void logUserLogin(final String uid, final ServerCallback<User> callback){
+        /*if (uid == null) {
+            return;
+
+        }
+        String url = "log-user-login/" + uid;
+        OrbitRestClient orbitRestClient = getOrbitRestClient(this.context);
+        orbitRestClient.get(url, null, new JsonHttpResponseHandler(){
+                    @Override
+                    public void onStart() {
+                        // called before request is started
+                    }
+
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject user) {
+                        Log.i("UserService", "Successfully found a user: " + user);
+                        Gson gson = new Gson();
+                        User dbUser = gson.fromJson(user.toString(), User.class);
+                        if (savetoSP) {
+                            callback.onSuccess(dbUser);
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, Throwable e, JSONObject errorResponse) {
+                        // called when response HTTP status is "4XX" (eg. 401, 403, 404)
+                        Log.e("UserService", "Error when finding user: " + errorResponse);
+                    }
+
+                    @Override
+                    public void onRetry(int retryNo) {
+                        // called when request is retried
+                    }
+                });*/
+    }
+
 }

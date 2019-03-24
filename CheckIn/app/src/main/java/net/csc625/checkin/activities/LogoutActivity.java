@@ -34,37 +34,11 @@ public class LogoutActivity extends BaseActivity {
 
         FirebaseAuth.getInstance().signOut();
 
-        if(user.getRole().getName() != Constants.ROLE_STUDENT)
-            disconnect();
-
         orbitPref.clear("loggedUser");
         // Hoping this kills all previous activities
         Intent intent = new Intent(context, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         context.startActivity(intent);
         //context.startActivity(LoginActivity.createIntent(context));
-    }
-
-    private void disconnect() {
-        /*SendBird.unregisterPushTokenAllForCurrentUser(new SendBird.UnregisterPushTokenHandler() {
-            @Override
-            public void onUnregistered(SendBirdException e) {
-                if (e != null) {
-                    // Error!
-                    e.printStackTrace();
-
-                    // Don't return because we still need to disconnect.
-                } else {
-//                    Toast.makeText(MainActivity.this, "All push tokens unregistered.", Toast.LENGTH_SHORT).show();
-                }
-
-                ConnectionManager.logout(new SendBird.DisconnectHandler() {
-                    @Override
-                    public void onDisconnected() {
-                        OrbitUserPreferences.setConnected(false);
-                    }
-                });
-            }
-        });*/
     }
 }

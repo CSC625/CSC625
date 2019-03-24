@@ -52,6 +52,21 @@
             android:label="Logout"
             android:screenOrientation="nosensor"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".activities.ChooseStudentActivity"
+            android:label="@string/menu_choose_student"
+            android:screenOrientation="nosensor"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.CreateStudentActivity"
+            android:label="@string/title_create_student"
+            android:screenOrientation="nosensor"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="nosensor"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

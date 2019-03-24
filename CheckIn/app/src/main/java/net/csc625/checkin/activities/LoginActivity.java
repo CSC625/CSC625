@@ -157,8 +157,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private void registerNewAccount()
     {
-        /*int TEST = 0;
-        startActivityForResult(RegisterActivity.createIntent(this), TEST);*/
+        int TEST = 0;
+        startActivityForResult(RegisterActivity.createIntent(this), TEST);
     }
 
     private void loadHomeScreen()
@@ -193,6 +193,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(LoginActivity.this, "Login Successful!",
                                     Toast.LENGTH_SHORT).show();
+
+                            //UserService userService = new UserService(test);
+                            //userService.logUserLogin(mAuth.getCurrentUser().getUid());
                             loadHomeScreen();
                         } else {
                             // If sign in fails, display a message to the user.

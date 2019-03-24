@@ -18,6 +18,8 @@ public class MenuList
             new MainMenuItem(R.string.menu_link_student,R.string.menu_link_student, R.drawable.menu_link_parent_student),
             new MainMenuItem(R.string.message_center, R.string.message_center, R.drawable.menu_icon_messages),
             new MainMenuItem(R.string.report_a_bug, R.string.report_a_bug, R.drawable.bug),*/
+            new MainMenuItem(R.string.menu_choose_student, R.string.menu_choose_student, R.drawable.menu_choose_student),
+            new MainMenuItem(R.string.menu_add_student,R.string.menu_add_student, R.drawable.menu_add_student),
             new MainMenuItem(R.string.menu_logout, R.string.menu_logout, R.drawable.menu_logout));
 
     public static final List<MainMenuItem> teacherMenuList = Arrays.asList(

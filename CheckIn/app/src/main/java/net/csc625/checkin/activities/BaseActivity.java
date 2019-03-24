@@ -156,7 +156,9 @@ public class BaseActivity extends AppCompatActivity {
      */
     public class OrbitMenuNavigation {
         public static final int HOME = 0;
-        public static final int LOG_OFF = 6;
+        public static final int ADD_STUDENT = 1;
+        public static final int CHOOSE_STUDENT = 2;
+        public static final int LOG_OFF = 3;
 
         private int result = 0;
         private Context context;
@@ -180,6 +182,10 @@ public class BaseActivity extends AppCompatActivity {
             selectedItem = 0;
             if(item.mTitle.trim().equals("Home"))
                 selectedItem = HOME;
+            else if(item.mTitle.trim().equals("Add Student"))
+                selectedItem = ADD_STUDENT;
+            else if(item.mTitle.trim().equals("Choose Student"))
+                selectedItem = CHOOSE_STUDENT;
             else if(item.mTitle.trim().equals("Log Out"))
                 selectedItem = LOG_OFF;
 
@@ -187,6 +193,10 @@ public class BaseActivity extends AppCompatActivity {
             switch(selectedItem)
             {
                 case HOME: startActivityForResult(HomeActivity.createIntent(context), result);
+                    break;
+                case ADD_STUDENT: startActivityForResult(CreateStudentActivity.createIntent(context), result);
+                    break;
+                case CHOOSE_STUDENT: startActivityForResult(ChooseStudentActivity.createIntent(context), result);
                     break;
                 case LOG_OFF:
                     finish();

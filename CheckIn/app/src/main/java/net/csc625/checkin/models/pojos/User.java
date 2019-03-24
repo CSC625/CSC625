@@ -13,7 +13,6 @@ public class User {
     private String lastLogin;
     private int invalidAttempts;
     private String active;
-    private Role role;
     private String firstName;
     private String lastName;
 
@@ -21,14 +20,13 @@ public class User {
 
     }
 
-    public User(String email, String uid, String lastLogin, int invalidAttempts, String active, Role role,
+    public User(String email, String uid, String lastLogin, int invalidAttempts, String active,
                 String firstName, String lastName) {
         this.email = email;
         this.uid = uid;
         this.lastLogin = lastLogin;
         this.invalidAttempts = invalidAttempts;
         this.active = active;
-        this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -97,14 +95,6 @@ public class User {
         this.active = active;
     }
 
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -114,7 +104,6 @@ public class User {
                 ", lastLogin='" + lastLogin + '\'' +
                 ", invalidAttempts=" + invalidAttempts +
                 ", active='" + active + '\'' +
-                ", role=" + role +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
