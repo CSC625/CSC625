@@ -67,6 +67,11 @@
             android:label="@string/title_activity_register"
             android:screenOrientation="nosensor"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.ViewStudentActivity"
+            android:label="@string/title_choose_student"
+            android:screenOrientation="nosensor"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

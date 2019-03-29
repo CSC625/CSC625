@@ -19,4 +19,5 @@
     <string name="newAccountCreated">New Account Created!</string>
     <string name="registrationFailed">Registration Failed</string>
     <string name="title_activity_register">Register</string>
+    <string name="title_choose_student">Choose Student</string>
 </resources>

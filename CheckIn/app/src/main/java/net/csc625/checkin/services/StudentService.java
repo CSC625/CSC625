@@ -5,13 +5,16 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 
 import net.csc625.checkin.activities.ChooseStudentActivity;
+import net.csc625.checkin.activities.ViewStudentActivity;
 import net.csc625.checkin.models.dto.StudentDTO;
 import net.csc625.checkin.models.exceptions.ErrorResponse;
+import net.csc625.checkin.models.pojos.QRCode;
 import net.csc625.checkin.models.pojos.Student;
 import net.csc625.checkin.models.pojos.User;
 import net.csc625.checkin.utils.OrbitRestClient;
@@ -80,7 +83,31 @@ public class StudentService extends BaseService {
                 });
     }
 
-    public void findStudent(final StudentDTO studentDTO){
+    public void getStudent(final ViewStudentActivity activity, final int studentId){
+        Log.d("Student", "Getting QR Code for student ID " + studentId);
+        OrbitRestClient orbitRestClient = getOrbitRestClient(this.context);
+        orbitRestClient.get("get-qr-code-single/" + studentId, null, new JsonHttpResponseHandler(){
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray codes) {
+                Log.e("Student", "SUCCESS - Getting QR Code for student ID: " + studentId);
+                Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+                //QRCode qrCode = gson.fromJson(code.toString(), new TypeToken<QRCode>(){}.getType());
+                Log.e("Student", "TEST CODES: " + codes);
+                List<QRCode> qrCodeList = gson.fromJson(codes.toString(), new TypeToken<List<QRCode>>(){}.getType());
+                activity.updateScreen(qrCodeList.get(0));
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable e, JSONObject errorResponse) {
+                // called when response HTTP status is "4XX" (eg. 401, 403, 404)
+                Log.e("Student", "FAILURE - Getting QR Code for student ID: " + studentId);
+            }
+
+        });
+    }
+
+    /*public void findStudent(final int studentID){
         OrbitUserPreferences orbitPref = new OrbitUserPreferences(this.context);
         final User user = orbitPref.getUserPreferenceObj("loggedUser");
 
@@ -114,7 +141,7 @@ public class StudentService extends BaseService {
                         Student foundStudent = gson.fromJson(student.toString(), Student.class);
 
                         /*AccountLinkDTO accountLinkDTO = new AccountLinkDTO(user.getUserID(), foundStudent.getStudentId());
-                        linkStudent(accountLinkDTO);*/
+                        linkStudent(accountLinkDTO);
 
                     }
 
@@ -130,7 +157,7 @@ public class StudentService extends BaseService {
                         // called when request is retried
                     }
                 });
-    }
+    }*/
 
 
     /*public void linkStudent(AccountLinkDTO accountLinkDTO){
@@ -198,6 +225,7 @@ public class StudentService extends BaseService {
                 List<Student> studentList = gson.fromJson(students.toString(), new TypeToken<List<Student>>(){}.getType());
                 activity.updateStudentList(studentList);
 
+                Log.i("StudentService", studentList.toString());
                 Log.i("StudentService", "Find Linked Student - Successful");
             }
 

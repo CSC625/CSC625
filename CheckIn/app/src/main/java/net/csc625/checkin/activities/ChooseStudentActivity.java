@@ -135,8 +135,13 @@ public class ChooseStudentActivity extends BaseActivity {
         public void onClick(View v) {
             int position = getAdapterPosition();
             Student student = ChooseStudentActivity.Adapter.students.get(position);
-            int studentID = student.getStudentId();
+            int studentID = student.getStudentID();
             String studentFullName = student.getStudentFirstName() + " " + student.getStudentLastName();
+
+            Context context = itemView.getContext();
+            //Intent intent = ViewStudentActivity.createIntent(context, studentID);
+            Intent intent = ViewStudentActivity.createIntent(context, studentID);
+            context.startActivity(intent);
 
             /*if(ChooseStudentActivity.Adapter.actionType == 0) {
                 Context context = itemView.getContext();
