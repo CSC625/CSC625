@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "c4718c2f-9ad7-4d99-86a7-7df524eca245",
+		"name": "CSC625_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/all-users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"all-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Production-getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/all-users",
+					"protocol": "http",
+					"host": [
+						"ec2-18-223-239-89",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"checkin",
+						"all-users"
+					]
+				},
+				"description": "Get a list of users from our production environment"
+			},
+			"response": []
+		}
+	]
+}
