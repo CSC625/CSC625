@@ -5,10 +5,6 @@ import android.content.Context;
 
 import java.util.Properties;
 
-/**
- * Created by brocktubre on 11/5/17.
- */
-
 public class PropertiesService {
 
     private Context context;

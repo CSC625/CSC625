@@ -21,6 +21,7 @@ import android.widget.Toast;
 import net.csc625.checkin.R;
 import net.csc625.checkin.models.exceptions.ErrorResponse;
 import net.csc625.checkin.models.pojos.Student;
+import net.csc625.checkin.models.pojos.User;
 import net.csc625.checkin.services.PopupService;
 import net.csc625.checkin.services.StudentService;
 import net.csc625.checkin.utils.Constants;

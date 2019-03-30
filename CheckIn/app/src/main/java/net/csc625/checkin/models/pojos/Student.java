@@ -1,20 +1,18 @@
 package net.csc625.checkin.models.pojos;
 
-/**
- * Created by David on 11/8/2017.
- */
-
 public class Student
 {
     private int studentID;
     private String studentFirstName, studentLastName, studentDateOfBirth;
+    private User user;
 
-    public Student(String studentFirstName, String studentLastName, String dateOfBirth, int studentID)
+    public Student(String studentFirstName, String studentLastName, String dateOfBirth, int studentID, User user)
     {
         this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;
         this.studentDateOfBirth = dateOfBirth;
         this.studentID = studentID;
+        this.user = user;
     }
 
     public Student(String studentFirstName, String studentLastName, String studentDateOfBirth) {
@@ -48,11 +46,20 @@ public class Student
     public void setDateOfBirth(String DateOfBirth)
     {this.studentDateOfBirth = DateOfBirth;}
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString()
     {
         return "Student [studentID = " + studentID + ", firstName = " + studentFirstName+
                 ",lastName = " + studentLastName + ",DOB = "+studentDateOfBirth+
+                ",user = "+user+
                 "]";
     }
 }

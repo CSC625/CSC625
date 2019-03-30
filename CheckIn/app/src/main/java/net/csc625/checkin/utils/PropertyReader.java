@@ -6,10 +6,6 @@ import android.content.res.AssetManager;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * Created by brocktubre on 11/4/17.
- */
-
 public class PropertyReader {
     private Context context;
     private Properties properties;

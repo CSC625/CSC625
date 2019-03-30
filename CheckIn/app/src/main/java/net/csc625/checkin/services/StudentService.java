@@ -38,6 +38,10 @@ public class StudentService extends BaseService {
         this.context = context;
     }
     public void addStudent(Student newStudent, final ServerCallback<Student> callback){
+        OrbitUserPreferences orbitPref = new OrbitUserPreferences(this.context);
+        final User user = orbitPref.getUserPreferenceObj("loggedUser");
+        newStudent.setUser(user);
+
         Gson gson = new Gson();
         String json = gson.toJson(newStudent);
         StringEntity entity = null;

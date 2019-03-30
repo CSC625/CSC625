@@ -3,10 +3,6 @@ package net.csc625.checkin.models.dto;
 
 import net.csc625.checkin.models.pojos.User;
 
-/**
- * Created by brocktubre on 2/5/18.
- */
-
 public class AccountDetailsDTO {
     private User user;
     private String firstName;

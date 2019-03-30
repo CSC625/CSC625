@@ -3,10 +3,6 @@ package net.csc625.checkin.models.pojos;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by brocktubre on 11/4/17.
- */
-
 public class Teacher {
 
     private int teacherID;

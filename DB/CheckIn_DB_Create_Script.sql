@@ -43,7 +43,7 @@ DROP TABLE IF EXISTS `CheckIns`;
 CREATE TABLE `CheckIns` (
 	`ID` int(11) NOT NULL AUTO_INCREMENT,
 	`Student_ID` int(11) NOT NULL,
-	`Check_In_Date` date NOT NULL,
+	`Check_In_Date` timestamp NOT NULL,
 	PRIMARY KEY (`ID`),
 	KEY `Student_ID` (`Student_ID`),
 	CONSTRAINT `CheckIns_idfk_1` FOREIGN KEY (`Student_ID`) REFERENCES `student` (`ID`) 

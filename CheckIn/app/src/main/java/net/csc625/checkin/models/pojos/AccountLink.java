@@ -1,9 +1,5 @@
 package net.csc625.checkin.models.pojos;
 
-/**
- * Created by brocktubre on 12/25/17.
- */
-
 public class AccountLink {
     private int accountLinkID;
     private String active;

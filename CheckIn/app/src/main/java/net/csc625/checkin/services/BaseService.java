@@ -6,10 +6,6 @@ import net.csc625.checkin.utils.Constants;
 import net.csc625.checkin.utils.OrbitRestClient;
 import net.csc625.checkin.utils.PropertiesService;
 
-/**
- * Created by brocktubre on 2/22/18.
- */
-
 public class BaseService {
     private PropertiesService propertiesService;
     private OrbitRestClient orbitRestClient;

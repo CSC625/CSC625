@@ -1,9 +1,5 @@
 package net.csc625.checkin.utils;
 
-/**
- * Created by brocktubre on 3/24/18.
- */
-
 public class PopupMessages {
     public static final String REPORT_BUG_MESSAGE = "Report anything that you find to be confusing or broken. If something does not operate clearly please fill the form out and let the Developers know.";
     public static final String ADD_TEACHER_MESSAGE = "To complete this form, fill out the First Name, Last Name, and Date of Birth, then click the \"Save\" Button to save the new teacher into the system.";

@@ -1,9 +1,5 @@
 package net.csc625.checkin.models.pojos;
 
-/**
- * Created by David on 1/30/2018.
- */
-
 import net.csc625.checkin.R;
 
 import java.util.Arrays;

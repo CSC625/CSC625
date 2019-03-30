@@ -2,10 +2,6 @@ package net.csc625.checkin.models.exceptions;
 
 import java.util.Date;
 
-/**
- * Created by brocktubre on 2/3/18.
- */
-
 public class ErrorResponse {
 
     String status;
