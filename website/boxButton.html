@@ -1,17 +1,11 @@
 <html>
-	<form action="action.php" method="post">
-		
-		<input type="text" name="text">
-		<br>
-		<input type="submit" name="ID" value="Submit">
-		
-	</form>
+        <form action="action.php" method="post">
 
-	<?php
-	
-		$id = $POST['ID'];
-		//add api url 
-		$apiurl = "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/all-users" . $id;
-        echo $apiurl;
-    ?>
+                <input type="text" name="id">
+                <br>
+                <input type="submit" name="submit">
+
+        </form>
+
+
 </html>
