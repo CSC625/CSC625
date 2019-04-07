@@ -25,8 +25,10 @@ import android.widget.Toast;
 import net.csc625.checkin.R;
 import net.csc625.checkin.models.pojos.MainMenuItem;
 import net.csc625.checkin.models.pojos.MenuList;
+import net.csc625.checkin.models.pojos.User;
 import net.csc625.checkin.services.LogoutService;
 import net.csc625.checkin.utils.Constants;
+import net.csc625.checkin.utils.OrbitUserPreferences;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -303,10 +305,15 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void updateNavBar(){
-        /*OrbitUserPreferences orbitPref = new OrbitUserPreferences(this);
+        OrbitUserPreferences orbitPref = new OrbitUserPreferences(this);
         User user = orbitPref.getUserPreferenceObj("loggedUser");
-        Log.i("UserFromSharedPref", user.toString());
-        String userRole = user.getRole().getName();*/
+
+        String firstName = "", lastName = "";
+        String role = "ADMIN";
+        if(user != null) {
+            firstName = user.getFirstName();
+            lastName = user.getLastName();
+        }
 
         if (true) {
             this.mainMenuItems = MenuList.adminMenuList;
@@ -319,9 +326,6 @@ public class BaseActivity extends AppCompatActivity {
         }
         orbitNav = new OrbitMenuNavigation(getApplicationContext());
         userName = (TextView)findViewById(R.id.userName);
-        String firstName = "Kevin";
-        String lastName = "Stanley";
-        String role = "ADMIN";
         userName.setText(firstName + " " + lastName + " (" + role + ")");
     }
 

@@ -8,7 +8,7 @@
     <string name="error_field_required">This field is required</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="no_description">No description for this assignment.</string>
-    <string name="title_activity_home">Orbit</string>
+    <string name="title_activity_home">CheckIn</string>
     <string name="title_activity_main">TODO Change</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."

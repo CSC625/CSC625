@@ -87,7 +87,7 @@ public class UserService extends BaseService {
             return;
 
         }
-        /*String url = "get-user/" + uid;
+        String url = "get-user/" + uid;
         OrbitRestClient orbitRestClient = getOrbitRestClient(this.context);
         orbitRestClient.get(url, null, new JsonHttpResponseHandler(){
                     @Override
@@ -116,14 +116,19 @@ public class UserService extends BaseService {
                     public void onRetry(int retryNo) {
                         // called when request is retried
                     }
-                });*/
+                });
     }
 
     public void storeUserInPreferences(FirebaseAuth mAuth, final ServerCallback<Boolean> callback) {
         FirebaseUser user = mAuth.getCurrentUser();
         final OrbitUserPreferences orbitPref = new OrbitUserPreferences(this.context);
-        callback.onSuccess(true);
-        /*this.findUserByUID(user.getUid(), true, new ServerCallback<User>() {
+
+        /*callback.onSuccess(true);
+        User test = new User("test2@gmail.com", 115);
+        orbitPref.storePreference("loggedUser", test);
+        callback.onSuccess(true);*/
+
+        this.findUserByUID(user.getUid(), true, new ServerCallback<User>() {
             @Override
             public void onSuccess(User dbUser) {
                 orbitPref.storePreference("loggedUser", dbUser);
@@ -134,7 +139,7 @@ public class UserService extends BaseService {
             public void onFail(ErrorResponse errorMessage) {
 
             }
-        });*/
+        });
     }
 
     public void logUserLogin(final String uid, final ServerCallback<User> callback){
