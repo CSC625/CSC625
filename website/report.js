@@ -122,19 +122,21 @@ function buildLine() {
   x: [1, 2, 3, 4],
   y: [10, 15, 13, 17],
   type: 'scatter',
-  color: '#00adb5'
+  color: '#00adb5',
+  name: 'Checkins'
 };
 
 var trace2 = {
   x: [1, 2, 3, 4],
   y: [16, 5, 11, 9],
   type: 'scatter',
-  color: '#222831'
+  color: '#222831',
+  name: 'Users'
 };
 
 var data = [trace1, trace2];
 
-var layout = { title: 'Users Over Time' }
+var layout = { title: 'Users vs. Checkins Over Time' }
 
 
 Plotly.newPlot('lineDiv', data, layout, {responsive: true});
