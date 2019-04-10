@@ -25,14 +25,14 @@
 }
 
 body {
-	background-color: #222831;
 }
 
 .buttonArea {
-	margin: 60px;
-	align-content: center;
+	margin: auto;
+	margin-top: 20px; 
+	margin-bottom: 20px;
+	text-align: center;
 	width: 100%;
-	display: inline-block;
 }
 
 a {
@@ -41,6 +41,21 @@ a {
 	width: 300px;
 	height: 40px;
 }
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  top: 50%;
+}
+
+.formArea {
+	padding-top: 300px;
+	text-align: center;
+	vertical-align: center;
+	top: 50%;
+}
+
 
 
 
