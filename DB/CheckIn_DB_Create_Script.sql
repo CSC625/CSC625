@@ -49,6 +49,9 @@ CREATE TABLE `CheckIns` (
 	CONSTRAINT `CheckIns_idfk_1` FOREIGN KEY (`Student_ID`) REFERENCES `student` (`ID`) 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
+CREATE VIEW `checkin_view` AS
+SELECT student.ID, Check_In_Date, FirstName, LastName from checkins
+join student on checkins.Student_ID = student.ID;
 
 CREATE USER 'api'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON `%`.* TO 'api'@'localhost' WITH GRANT OPTION;

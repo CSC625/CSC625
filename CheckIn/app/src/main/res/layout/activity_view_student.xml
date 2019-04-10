@@ -7,7 +7,8 @@
     android:columnCount="2"
     android:rowCount="4"
     android:orientation="vertical"
-    tools:context="net.csc625.checkin.activities.ViewStudentActivity">
+    tools:context="net.csc625.checkin.activities.ViewStudentActivity"
+    android:background="#FFFFFF">
 
 
     <TextView
