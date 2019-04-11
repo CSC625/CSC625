@@ -6,204 +6,565 @@
 	},
 	"item": [
 		{
-			"name": "All Users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+			"name": "Local",
+			"item": [
+				{
+					"name": "All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/all-users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"all-users"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/all-users",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"all-users"
-					]
+				{
+					"name": "Find Linked",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/find-linked/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"find-linked",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Local QR Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/get-qr-code/HELLO",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"get-qr-code",
+								"HELLO"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All QR Codes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/all-qr-codes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"all-qr-codes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One QR Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/get-qr-code-single/214",
+							"protocol": "http",
+							"host": [
+								"ec2-18-223-239-89",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8080",
+							"path": [
+								"checkin",
+								"get-qr-code-single",
+								"214"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/get-student/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"get-student",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Student",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\t\"studentFirstName\": \"TEST\",\n\t\"studentLastName\": \"TESTLAST8\",\n\t\"active\":\" Y\",\n\t\"user\": {\n\t\t\"userID\": 4\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/create-student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"create-student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Student By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/get-student-by-name/SPIDERMAN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"get-student-by-name",
+								"SPIDERMAN"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log CheckIn",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/log-checkin/SPIDERMAN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"log-checkin",
+								"SPIDERMAN"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All CheckIns",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/all-checkins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"all-checkins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"fName\": \"TEST\",\r\n\t\"lName\": \"TESTLAST\",\r\n\t\"active\":\" Y\",\r\n\t\"dob\":\"2018-01-01\",\r\n\t\"user\": {\r\n\t\t\"email\" : \"TEST@TEST.com\",\r\n\t\t\"uid\": \"4q238my0QDfl8VlEJNpI1vpiGHw1\",\r\n\t\t\"lastLogin\":\"1234-12-12\",\r\n\t\t\"active\": \"Y\",\r\n\t\t\"firstName\": \"TEST\",\r\n\t\t\"lastName\": \"TESTLAST\"\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/add-user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"add-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One QR Code Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/get-qr-code-single/21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"get-qr-code-single",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/get-user/cutIY5OmN9bbQzX4Sx6u2udy94r1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"get-user",
+								"cutIY5OmN9bbQzX4Sx6u2udy94r1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Find Linked",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+			"name": "Production",
+			"item": [
+				{
+					"name": "Production - All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/all-users",
+							"protocol": "http",
+							"host": [
+								"ec2-18-223-239-89",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8080",
+							"path": [
+								"checkin",
+								"all-users"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/find-linked/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"find-linked",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Local QR Code",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+				{
+					"name": "Production - Create Student",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\t\"studentFirstName\": \"TEST\",\n\t\"studentLastName\": \"TESTLAST56\",\n\t\"active\":\" Y\",\n\t\"user\": {\n\t\t\"userID\": 113\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/create-student",
+							"protocol": "http",
+							"host": [
+								"ec2-18-223-239-89",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8080",
+							"path": [
+								"checkin",
+								"create-student"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/get-qr-code/HELLO",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"get-qr-code",
-						"HELLO"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Production - All Users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+				{
+					"name": "Production - Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"fName\": \"TEST\",\r\n\t\"lName\": \"TESTLAST\",\r\n\t\"active\":\" Y\",\r\n\t\"dob\":\"2018-01-01\",\r\n\t\"user\": {\r\n\t\t\"email\" : \"test@gmail.com\",\r\n\t\t\"uid\": \"O2zFegF74CfM3iE7he4Um4iq91o1\",\r\n\t\t\"lastLogin\":\"1234-12-12\",\r\n\t\t\"active\": \"Y\",\r\n\t\t\"firstName\": \"TEST\",\r\n\t\t\"lastName\": \"TESTLAST\"\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/add-user",
+							"protocol": "http",
+							"host": [
+								"ec2-18-223-239-89",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8080",
+							"path": [
+								"checkin",
+								"add-user"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/all-users",
-					"protocol": "http",
-					"host": [
-						"ec2-18-223-239-89",
-						"us-east-2",
-						"compute",
-						"amazonaws",
-						"com"
-					],
-					"port": "8080",
-					"path": [
-						"checkin",
-						"all-users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "All QR Codes",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+				{
+					"name": "Production All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/all-users",
+							"protocol": "http",
+							"host": [
+								"ec2-18-223-239-89",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8080",
+							"path": [
+								"checkin",
+								"all-users"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/all-qr-codes",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"all-qr-codes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Find One QR Code",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+				{
+					"name": "Production Find Linked",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/find-linked/114",
+							"protocol": "http",
+							"host": [
+								"ec2-18-223-239-89",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8080",
+							"path": [
+								"checkin",
+								"find-linked",
+								"114"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/get-qr-code-single/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"get-qr-code-single",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Find Student",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+				{
+					"name": "Production All QR Codes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/all-qr-codes",
+							"protocol": "http",
+							"host": [
+								"ec2-18-223-239-89",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8080",
+							"path": [
+								"checkin",
+								"all-qr-codes"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/get-student/14",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"get-student",
-						"14"
-					]
+				{
+					"name": "Log CheckIn Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\t\n}"
+						},
+						"url": {
+							"raw": "http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/log-checkin/MARYSMITH",
+							"protocol": "http",
+							"host": [
+								"ec2-18-223-239-89",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "8080",
+							"path": [
+								"checkin",
+								"log-checkin",
+								"MARYSMITH"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Student",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\n\t\"studentFirstName\": \"TEST\",\n\t\"studentLastName\": \"TESTLAST\",\n\t\"active\":\" Y\",\n\t\"user\": {\n\t\t\"id\": 1\n\t}\n}"
-				},
-				"url": {
-					"raw": "http://localhost:8080/create-student",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"create-student"
-					]
-				}
-			},
-			"response": []
+			]
 		}
 	]
 }
