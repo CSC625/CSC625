@@ -54,7 +54,7 @@
                 android:id="@+id/avatar"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/orbit_icon"
+                android:src="@drawable/checkin"
                 android:layout_marginTop="15dp" />
 
             <LinearLayout
