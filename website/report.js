@@ -53,9 +53,9 @@ userJson = sortJSON( checkinJson,'checkInDate', '321');
 for(var i = 0; i < userJson.length; i++ ) {
 	    checkInID.push(checkinJson[i].checkInID);
 	    student.push(checkinJson[i].student);
-	    studentID.push(checkinJson[i].studentID);
-	    studentFirstName.push(checkinJson[i].studentFirstName);
-	    studentLastName.push(checkinJson[i].studentLastName); 
+	    studentID.push(checkinJson[i].student.studentID);
+	    studentFirstName.push(checkinJson[i].student.studentFirstName);
+	    studentLastName.push(checkinJson[i].student.studentLastName); 
 	    active.push(checkinJson[i].active);
 	    checkInDate.push(checkinJson[i].checkInDate);
 	    user.push(checkinJson[i].user); 
