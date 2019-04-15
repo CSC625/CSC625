@@ -1,4 +1,3 @@
-
 function sortJSON(data, key, way) {
     return data.sort(function(a, b) {
         var x = a[key]; var y = b[key];
@@ -47,10 +46,10 @@ let active = [];
 let user = [];
 let checkInDate = [];
 
-userJson = sortJSON( checkinJson,'checkInDate', '321');
+checkinJson = sortJSON( checkinJson,'checkInDate', '321');
 
 
-for(var i = 0; i < userJson.length; i++ ) {
+for(var i = 0; i < checkinJson.length; i++ ) {
 	    checkInID.push(checkinJson[i].checkInID);
 	    student.push(checkinJson[i].student);
 	    studentID.push(checkinJson[i].student.studentID);
@@ -65,32 +64,81 @@ for(var i = 0; i < userJson.length; i++ ) {
 }
 
 
+var userJson ='not set';
+var checkinJson ='not set';
+
 function fetchAPIs() {
 fetch('http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/all-users')
   .then(function(response) {
     return response.json();
   })
   .then(function(myJson) {
-    console.log(JSON.stringify(myJson));
-  	populateUserCharts(myJson)
-  });
-
+    populateUserCharts(myJson)
+    assignUserJson(myJson)
+    buildBar(userJson)
+  }).then(function() {
   fetch('http://ec2-18-223-239-89.us-east-2.compute.amazonaws.com:8080/checkin/all-checkins')
   .then(function(response) {
     return response.json();
   })
   .then(function(myJson) {
-    console.log(JSON.stringify(myJson));
-  	populateCheckinCharts(myJson)
+    populateCheckinCharts(myJson)
+    assignCheckinJson(myJson)
+  }).then(function() {
+    buildLine(userJson, checkinJson);
   });
+})
 }
 
-function buildBar() {
+// Necessary to handle the asyc of fetch, probably not the best way
+function assignUserJson(myJson) {
+  userJson = myJson;
+}
+function assignCheckinJson(myJson) {
+  checkinJson = myJson;
+}
+
+
+function buildBar(userJson) {
+
+  let november = 0, december = 0, january = 0, february = 0, march = 0, april = 0;
+  for(i = 0; i < userJson.length; i++) {
+
+    var jsonDate = new Date(userJson[i].lastLogin)
+    var month = jsonDate.getMonth() + 1;
+    var year = jsonDate.getFullYear();
+    if (month == 11 && year == 2018)
+    {
+      november++
+    }
+    if (month == 12 && year == 2018)
+    {
+      december++
+    }
+    if (month == 01 && year == 2019)
+    {
+      january++
+    }
+    if (month == 02 && year == 2019)
+    {
+      february++
+    }
+    if (month == 03 && year == 2019)
+    {
+      march++
+    }
+    if (month == 04 && year == 2019)
+    {
+      april++
+    }
+    
+  }
+
 	var trace1 = {
   x: ['November', 'December', 'January', 'February', 'March', 'April'],
-  y: [8.0, 8.0, 12.0, 12.0, 13.0, 50.0],
+  y: [november, december, january, february, march, april],
   type: 'bar',
-  text: ['4.17 below the mean', '4.17 below the mean', '0.17 below the mean', '0.17 below the mean', '0.83 above the mean', '7.83 above the mean'],
+  text: [],
   marker: {
     color: '#00adb5'
   }
@@ -99,7 +147,7 @@ function buildBar() {
 var data = [trace1];
 
 var layout = {
-  title: 'User Count Last 6 Months',
+  title: 'Last Login Count - Last 6 Months',
   font:{
     family: 'Raleway, sans-serif'
   },
@@ -117,26 +165,101 @@ var layout = {
 Plotly.newPlot('barDiv', data, layout);
 }
 
-function buildLine() {
+function buildLine(userJson, checkinJson) {
+
+  let november = 0, december = 0, january = 0, february = 0, march = 0, april = 0;
+  for(i = 0; i < checkinJson.length; i++) {
+
+    var jsonDate = new Date(checkinJson[i].checkInDate)
+    var month = jsonDate.getMonth() + 1;
+    var year = jsonDate.getFullYear();
+    if (month == 11 && year == 2018)
+    {
+      november++
+    }
+    if (month == 12 && year == 2018)
+    {
+      december++
+    }
+    if (month == 01 && year == 2019)
+    {
+      january++
+    }
+    if (month == 02 && year == 2019)
+    {
+      february++
+    }
+    if (month == 03 && year == 2019)
+    {
+      march++
+    }
+    if (month == 04 && year == 2019)
+    {
+      april++
+    }
+    
+  }
+
+
 	var trace1 = {
-  x: [1, 2, 3, 4],
-  y: [10, 15, 13, 17],
+  x: ['November', 'December', 'January', 'February', 'March', 'April'],
+  y: [november, december, january, february, march, april],
   type: 'scatter',
-  color: '#00adb5',
+  line: {
+    color: '#23272B',
+    width: 3.0
+  },
   name: 'Checkins'
 };
 
+
+
+november = 0, december = 0, january = 0, february = 0, march = 0, april = 0;
+  for(i = 0; i < userJson.length; i++) {
+
+    var jsonDate = new Date(userJson[i].lastLogin)
+    var month = jsonDate.getMonth() + 1;
+    var year = jsonDate.getFullYear();
+    if (month == 11 && year == 2018)
+    {
+      november++
+    }
+    if (month == 12 && year == 2018)
+    {
+      december++
+    }
+    if (month == 01 && year == 2019)
+    {
+      january++
+    }
+    if (month == 02 && year == 2019)
+    {
+      february++
+    }
+    if (month == 03 && year == 2019)
+    {
+      march++
+    }
+    if (month == 04 && year == 2019)
+    {
+      april++
+    }
+    
+  }
 var trace2 = {
-  x: [1, 2, 3, 4],
-  y: [16, 5, 11, 9],
+  x: ['November', 'December', 'January', 'February', 'March', 'April'],
+  y: [november, december, january, february, march, april],
   type: 'scatter',
-  color: '#222831',
+  line: {
+    color: '#00adb5',
+    width: 3.0
+  },
   name: 'Users'
 };
 
 var data = [trace1, trace2];
 
-var layout = { title: 'Users vs. Checkins Over Time' }
+var layout = { title: 'Users vs. Checkins - Last 6 Months' }
 
 
 Plotly.newPlot('lineDiv', data, layout, {responsive: true});
@@ -271,7 +394,6 @@ Plotly.plot('tableDiv2', data, layout, {responsive: true});
 fetchAPIs();
 
 buildBar();
-buildLine();
 //buildPie();
 
 
